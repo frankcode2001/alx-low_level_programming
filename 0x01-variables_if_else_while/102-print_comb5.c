@@ -8,7 +8,7 @@ int main(void)
 {
 	int dig1, dig2;
 
-	for (dig1 = 0; dig2 < 100; dig1++)
+	for (dig1 = 0; dig1 < 100; dig1++)
 	{
 		for (dig2 = 0; dig2 < 100; dig2++)
 		{
