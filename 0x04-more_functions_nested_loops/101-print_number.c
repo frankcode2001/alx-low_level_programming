@@ -1,42 +1,40 @@
 #include "main.h"
 
 /**
- * print_number - print an int numbers.
- * @n: number tested
- * Return: Always 0.
+ * print_number - prints a number with _putchar
+ * @n: Number to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
  */
 void print_number(int n)
 {
-        int a;
-        int b;
-        int c;
-        int d;
-        int e;
+	int a, b, dec;
+	unsigned int num1; 
+        unsigned int num2;
 
-        b = n;
-        e = a =  1;
-/*Check for a negative number*/
-        if (b < 0)
-        {
-                b *= -1;
-                _putchar('-');
-        }
-
-        d = b;
-        while (d >= 10)
-        {
-                a++;
-                d /= 10;
-        }
-/*Create a number to the power(exponent)*/
-        for (c = 1; c < a; c++)
-        {
-                e *= 10;
-        }
-        while (e > 1)
-        {
-                _putchar((b / e) % 10 + '0');
-                e /= 10;
-        }
-        _putchar(b % 10 + '0');
+	a = 1;
+	if (n < 0)
+	{
+		n = n * -1;
+		dec = 1;
+	}
+	num1 = n;
+	num2 = n;
+	while (num1 >= 10)
+	{
+		num1 = num1 / 10;
+		a = a * 10;
+	}
+	if (dec == 1)
+	{
+		_putchar('-');
+	}
+	_putchar('0' + (num2 / a));
+	b = a / 10;
+	while (b >= 1)
+	{
+		_putchar('0' + (num2 / b) % 10);
+		b = b / 10;
+	}
 }
