@@ -1,8 +1,9 @@
 #include "main.h"
 
 /**
- * print_number - prints an integer
- * @n: Input number
+ * print_number - print an int numbers.
+ * @n: number tested
+ * Return: Always 0.
  */
 void print_number(int n)
 {
@@ -14,7 +15,6 @@ void print_number(int n)
 
         b = n;
         e = a =  1;
-
 /*Check for a negative number*/
         if (b < 0)
         {
@@ -28,7 +28,6 @@ void print_number(int n)
                 a++;
                 d /= 10;
         }
-
 /*Create a number to the power(exponent)*/
         for (c = 1; c < a; c++)
                 e *= 10;
