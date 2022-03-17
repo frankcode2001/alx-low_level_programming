@@ -30,8 +30,9 @@ void print_number(int n)
         }
 /*Create a number to the power(exponent)*/
         for (c = 1; c < a; c++)
+        {
                 e *= 10;
-
+        }
         while (e > 1)
         {
                 _putchar((b / e) % 10 + '0');
