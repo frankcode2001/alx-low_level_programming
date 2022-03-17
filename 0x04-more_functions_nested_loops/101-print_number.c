@@ -10,8 +10,7 @@
 void print_number(int n)
 {
 	int a, b, dec;
-	unsigned int num1; 
-        unsigned int num2;
+	unsigned int num1, num2;
 
 	a = 1;
 	if (n < 0)
