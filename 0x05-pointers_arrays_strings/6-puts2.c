@@ -1,17 +1,15 @@
 #include "main.h"
 
 /**
- * puts2 - prints every other character of a string to stdout
- *
- * Return: void
- */
+  * puts2 - prints one character out of two
+  * @str: takes in a string
+  */
 void puts2(char *str)
 {
-	int num;
+	int i;
 
-	for (num = 0; *str; str += 2) 
-	{
-    		_putchar(*str);
-  	}
+	for (i = 0; str[i] != '\0'; i++)
+		if (c % 2 == 0)
+			_putchar(str[i]);
 	_putchar('\n');
 }
