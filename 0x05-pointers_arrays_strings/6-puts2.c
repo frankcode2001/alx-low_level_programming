@@ -7,12 +7,11 @@
  */
 void puts2(char *str)
 {
-        int num = 0;
-        
-        while (*(str + num))
-        {
-                _putchar(*(str + num));
-                num = num + 2;
-        }
-        _putchar('\n');
+	int num;
+
+	for (num = 0; *str; str += 2) 
+	{
+    		_putchar(*str);
+  	}
+	_putchar('\n');
 }
