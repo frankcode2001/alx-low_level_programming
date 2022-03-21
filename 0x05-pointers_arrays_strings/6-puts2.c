@@ -2,20 +2,20 @@
 
 /**
  * puts2 - prints every other character of a string.
- *@str: the string to use.
+ *@str: the string to be used.
  */
 
 void puts2(char *str)
 {
-	int i = 0;
+	int num = 0;
 
-	while (str[i] != '\0')
+	while (str[num] != '\0')
 	{
-		if (i % 2 == 0)
+		if (num % 2 == 0)
 		{
-			_putchar(str[i]);
+			_putchar(str[num]);
 		}
-		i++;
+		num++;
 	}
 	_putchar('\n');
 }
