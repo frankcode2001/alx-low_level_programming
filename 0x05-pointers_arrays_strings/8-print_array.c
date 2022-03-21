@@ -1,4 +1,4 @@
-#include "main.h"
+#include "holberton.h"
 #include <stdio.h>
 
 /**
@@ -10,14 +10,15 @@
  */
 void print_array(int *a, int n)
 {
-	int num = 0;
+	int num;
 
-	while (num < n)
+	for (num = 0; num < n; num++)
 	{
 		printf("%d", a[num]);
-		if (num < (n - num))
+		if (num < n - 1)
+		{
 			printf(", ");
-		num++;
+		}
 	}
 	printf("\n");
 }
