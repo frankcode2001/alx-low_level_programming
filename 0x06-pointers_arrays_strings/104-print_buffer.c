@@ -2,73 +2,43 @@
 #include <stdio.h>
 
 /**
- *print_buffer - Print a buffer 10 bytes per line.
- *@b: Buffer address.
- *@size: Number of characters to be printed.
+ * print_buffer - prints string buffer
+ * @b: the buffer
+ * @size: size of buffer to print
+ *
+ * Return: void
  */
 void print_buffer(char *b, int size)
 {
-	int i, pi, c;
+	int o = 0, i, j;
 
 	if (size <= 0)
 	{
 		printf("\n");
+		return;
 	}
-	else
+	while (o < size)
 	{
-		for (i = 9, pi = 0; i < size; i += 10)
-		{	printf("%.8x: ", pi);
-				for (c = pi; c <= i ; c++)
-				{	printf("%.2x", b[c]);
-					if (c % 2 == 1)
-					{
-						printf(" ");
-					}
-				}
-				for (c = pi; c <= i ; c++)
-				{
-					if (b[c] < 32)
-					{
-						printf(".");
-					}
-					else
-					{
-						printf("%c", b[c]);
-						printf("\n");
-						pi = i + 1;
-					}
-				}
+		j = size - o < 10 ? size - o : 10;
+		printf("%08x: ", o);
+		for (i = 0; i < 10; i++)
+		{
+			if (i < j)
+				printf("%02x", *(b + o + i));
+			else
+				printf("  ");
+			if (i % 2)
+				printf(" ");
 		}
-		if (pi < size - 1)
-		{	i -= 9;
-			printf("%.8x: ", i);
-			for (c = i; c < i + 10; c++)
-			{
-				if (c < size)
-				{
-					printf("%.2x", b[c]);
-				}
-				else
-				{
-					printf("  ");
-				}
-				if (c % 2 == 1)
-				{
-					printf(" ");
-				}
-			}
-			for (; i < size ; i++)
-			{
-				if (b[i] < 32)
-				{
-					printf(".");
-				}
-				else
-				{
-					printf("%c", b[i]);
-				}
-			}
-			printf("\n");
+		for (i = 0; i < j; i++)
+		{
+			int c = *(b + o + i);
+
+			if (c < 32 || c > 132)
+				c = '.';
+			printf("%c", c);
 		}
+		printf("\n");
+		o += 10;
 	}
 }
